@@ -1,0 +1,22 @@
+{
+    "title": “AssetMasterProcess",
+    "imageId": “assetmaster:latest",
+    "workingDirectory": "/usr/share/git/assetmaster”,
+    "commandToExecute": "python3 assetquery.py",
+    "exitValueHandler": "logging",
+    "stderrHandler": "logging",
+    "input": [
+        { "title" : "input-boundingbox", "useAs": "commandLineArgument", "type": "bbox",   "crs": ["EPSG:4326", "EPSG:4328"]},
+        { "title" : "mmin",              "useAs": "commandLineArgument", "type": "double", "default": "6.6"},
+        { "title" : "mmax",              "useAs": "commandLineArgument", "type": "double", "default": "8.5"},
+        { "title" : "zmin",              "useAs": "commandLineArgument", "type": "double", "default": "5"},
+        { "title" : "zmax",              "useAs": "commandLineArgument", "type": "double", "default": "140"},
+        { "title" : "p",                 "useAs": "commandLineArgument", "type": "double", "default": "0.1"},
+        { "title" : “mode”,             "useAs": "commandLineArgument", "type": "string", "default": “within”, "allowed": [“within”, “intersects”]},
+        { "title" : “schema”,              "useAs": "commandLineArgument", "type": “string”, "default": “SARA_v1.0”,"allowed": [“SARA_v1.0”]},
+        { "title" : "tlat",              "useAs": "commandLineArgument", "type": "double", "default": "-33.1299174879672"}
+    ],
+    "output": [
+        { "title": "selectedRows", "readFrom": "file", "path": "test.xml", "type": "xml", "schema": "http://quakeml.org/xmlns/quakeml/1.2/QuakeML-1.2.xsd"}
+    ]
+}

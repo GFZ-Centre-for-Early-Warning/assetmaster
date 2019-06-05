@@ -1,0 +1,693 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<nrml xmlns:gml="http://www.opengis.net/gml" xmlns="http://openquake.org/xmlns/nrml/0.5">
+  <exposureModel id="riesgos_test_v0.1" category="buildings" taxonomySource="GEM">
+    <description>GEM-SARA Model, project RIESGOS</description>
+    <conversions>
+      <costTypes>
+        <costType name="structural" type="per_asset" unit="USD"/>
+      </costTypes>
+    </conversions>
+    <assets>
+      <asset id="CHL.16.7.3_1" number="91" taxonomy="CR+PC/LWAL">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="985250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="453" taxonomy="CR/LWAL/DN">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="51500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="89" taxonomy="CR/LWAL/_1">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="51765.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="278" taxonomy="CR/LWAL/DU">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="35" taxonomy="CR/LWAL/_2">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="7" taxonomy="CR/LWAL/_3">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="30" taxonomy="ER+ETR/H_1">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="850000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="178" taxonomy="ER+ETR/H_2">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="25"/>
+          <occupancy period="night" occupants="55"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="1362" taxonomy="MCF/DNO/H_">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="2762500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="3208" taxonomy="MCF/DNO/_1">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="2337500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="641" taxonomy="MCF/DUC/H_">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="862" taxonomy="MR/DNO/H_1">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="301" taxonomy="MR/DUC/H_1">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="676800.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="51" taxonomy="MUR+ADO/H_">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="32000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="712" taxonomy="MUR+ADO/_1">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="80000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="10"/>
+          <occupancy period="night" occupants="20"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="87" taxonomy="MUR+STDRE/">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="105000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="5"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="4" taxonomy="MUR/H_1">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="1959" taxonomy="MUR/H_1,3">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="2519" taxonomy="UNK">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="745" taxonomy="W+WLI/H_1">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="3901" taxonomy="W+WLI/H_1,">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="1159" taxonomy="W+WS/H_1">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.3_1" number="1214" taxonomy="W+WS/H_1,2">
+        <location lon="-71.28895650986559" lat="-33.05325395611865"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="203" taxonomy="CR+PC/LWAL">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="985250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="1096" taxonomy="CR/LWAL/DN">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="51500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="287" taxonomy="CR/LWAL/_1">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="51765.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="365" taxonomy="CR/LWAL/DU">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="138" taxonomy="CR/LWAL/_2">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="34" taxonomy="CR/LWAL/_3">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="267" taxonomy="ER+ETR/H_1">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="850000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="1669" taxonomy="ER+ETR/H_2">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="25"/>
+          <occupancy period="night" occupants="55"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="877" taxonomy="MCF/DNO/H_">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="2762500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="3980" taxonomy="MCF/DNO/_1">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="2337500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="1126" taxonomy="MCF/DUC/H_">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="931" taxonomy="MR/DNO/H_1">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="415" taxonomy="MR/DUC/H_1">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="676800.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="619" taxonomy="MUR+ADO/H_">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="32000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="6676" taxonomy="MUR+ADO/_1">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="80000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="10"/>
+          <occupancy period="night" occupants="20"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="194" taxonomy="MUR+STDRE/">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="105000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="5"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="1" taxonomy="MUR/H_1">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="1823" taxonomy="MUR/H_1,3">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="3648" taxonomy="UNK">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="1472" taxonomy="W+WLI/H_1">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="10896" taxonomy="W+WLI/H_1,">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="1668" taxonomy="W+WS/H_1">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.5_1" number="3327" taxonomy="W+WS/H_1,2">
+        <location lon="-71.58336813721336" lat="-33.08355859499459"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="184" taxonomy="CR+PC/LWAL">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="985250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="1440" taxonomy="CR/LWAL/DN">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="51500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="487" taxonomy="CR/LWAL/_1">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="51765.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="499" taxonomy="CR/LWAL/DU">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="364" taxonomy="CR/LWAL/_2">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="94" taxonomy="CR/LWAL/_3">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="58" taxonomy="ER+ETR/H_1">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="850000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="340" taxonomy="ER+ETR/H_2">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="25"/>
+          <occupancy period="night" occupants="55"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="1762" taxonomy="MCF/DNO/H_">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="2762500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="5416" taxonomy="MCF/DNO/_1">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="2337500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="1585" taxonomy="MCF/DUC/H_">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="1343" taxonomy="MR/DNO/H_1">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="508" taxonomy="MR/DUC/H_1">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="676800.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="133" taxonomy="MUR+ADO/H_">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="32000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="1362" taxonomy="MUR+ADO/_1">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="80000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="10"/>
+          <occupancy period="night" occupants="20"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="258" taxonomy="MUR+STDRE/">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="105000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="5"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="2898" taxonomy="MUR/H_1,3">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="4931" taxonomy="UNK">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="1379" taxonomy="W+WLI/H_1">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="7882" taxonomy="W+WLI/H_1,">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="2229" taxonomy="W+WS/H_1">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="CHL.16.7.7_1" number="2384" taxonomy="W+WS/H_1,2">
+        <location lon="-71.48865889830337" lat="-32.9192134778063"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+    </assets>
+  </exposureModel>
+</nrml>
