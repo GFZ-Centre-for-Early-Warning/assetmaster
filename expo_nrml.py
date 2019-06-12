@@ -1,6 +1,14 @@
+#!/usr/bin/env/python
 
 # coding: utf-8
 
+'''
+utilities to write an exposure geo-data model into 
+openquake-compliant nrml (xml) format.
+'''
+
+
+import argparse
 import sys
 import pandas as pd
 import os
