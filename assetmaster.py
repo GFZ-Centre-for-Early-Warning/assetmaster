@@ -38,7 +38,7 @@ class Main():
         self.dict_file = self.folder
         self.metadata_file = self.folder
         self.path_outfile = os.path.join(self.folder,"output")
-        self.out_file_xml = "query_output.nrml"
+        self.out_file_xml = "query_output.xml"
         self.out_file_geojson = 'query_output.geojson'
         
         self.roi = None
