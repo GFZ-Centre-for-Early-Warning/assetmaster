@@ -1,0 +1,21 @@
+{
+    "title": "AssetmasterProcess",
+    "imageId": "assetmaster:latest",
+    "workingDirectory": "/usr/share/git/assetmaster",
+    "commandToExecute": "python3 assetmaster.py",
+    "exitValueHandler": "logging",
+    "stderrHandler": "logging",
+    "input": [
+        { "title" : "lonmin",              "useAs": "commandLineArgument", "type": "double", "default": "6.6"},
+        { "title" : "lonmax",              "useAs": "commandLineArgument", "type": "double", "default": "8.5"},
+        { "title" : "latmin",              "useAs": "commandLineArgument", "type": "double", "default": "5"},
+        { "title" : "latmax",              "useAs": "commandLineArgument", "type": "double", "default": "140"},
+        { "title" : "schema",                 "useAs": "commandLineArgument", "type": "string", "default": "SARA_v1.0"},
+        { "title" : "assettype",             "useAs": "commandLineArgument", "type": "string", "default": "res", "allowed": ["res"]},
+        { "title" : "querymode",              "useAs": "commandLineArgument","type": "string", "default": "intersects", "allowed": ["intersects","within"]}
+     ],
+    "output": [
+        { "title": "selectedRows", "readFrom": "file", "path": "output/query_output.xml", "type": "xml", "schema": "https://www.globalquakemodel.org/xmlns/nrml/0.5"}
+        { "title": "selectedRows", "readFrom": "file", "path": "output/query_output.geojson", "type": "json"}
+    ]
+}
