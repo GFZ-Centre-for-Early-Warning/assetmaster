@@ -10,8 +10,8 @@ import argparse
 import os
 import geopandas as gp
 from shapely.geometry import Polygon
-import matplotlib
-import matplotlib.pyplot as plt
+#import matplotlib
+#import matplotlib.pyplot as plt
 import expo_nrml as nrml
 
 class Main():
