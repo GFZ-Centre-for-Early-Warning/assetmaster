@@ -15,7 +15,7 @@
         { "title" : "querymode",           "useAs": "commandLineArgument","type": "string", "default": "intersects", "allowed": ["intersects","within"]}
      ],
     "output": [
-        { "title": "selectedRows", "readFrom": "file", "path": "output/query_output.xml", "type": "xml", "schema": "https://www.globalquakemodel.org/xmlns/nrml/0.5"}
-        { "title": "selectedRows", "readFrom": "file", "path": "output/query_output.geojson", "type": "json"}
+        { "title": "selectedRowsXml", "readFrom": "file", "path": "output/query_output.xml", "type": "xml"},
+        { "title": "selectedRowsGeoJson", "readFrom": "file", "path": "output/query_output.geojson", "type": "json"}
     ]
 }
