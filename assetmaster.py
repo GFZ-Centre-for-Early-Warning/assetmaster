@@ -136,7 +136,7 @@ class Main():
         try: 
             os.remove(filename)
         except OSError:
-            print("OS Error removing geojson file")
+            #print("OS Error removing geojson file")
             pass
         dataframe.to_file(filename, driver='GeoJSON')
         return (0)
@@ -149,7 +149,7 @@ class Main():
         try: 
             os.remove(filename)
         except OSError:
-            print("OS Error removing nrml file")
+            #print("OS Error removing nrml file")
             pass
         xml_string = nrml.write_nrml05_expo(dataframe,metadata,dicts,taxonomies,filename)
         return (0)
