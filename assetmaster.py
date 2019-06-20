@@ -91,24 +91,33 @@ class Main():
         
     def read_model(self,input_file):
         '''
-        read exposure model from a (geopackage) file, filter and harmonise 
-        the columns in order to have for each geocell the following:
-        index: integer unique identifier
-        gc_id: string, unique identifier
-        name: string, name
-        geometry: polygon
-        a number of columns follow, each describing a single taxonomic type
-
-        returns the model as geopandas dataframe and the list of taxonomic types
+        read exposure model from a (geopackage) file, 
+        geometry: multipolygon
+        columns: 
+        fid= (int) id of the geocell
+        name= (str) name of the geocell 
+        expo= (str) exposure model for the geocell. 
+                    Each expo element is a json dictionary containing:
+                    index= unique index of the geocell
+                    id= id of the geocell
+                    Region = name of the geocell
+                    Taxonomy = taxonomic type
+                    Dwellings = no. of dwellings per taxonomic type in the geocell (optional)
+                    Buildings = no. of buildings per taxonomic type in the geocell 
+                    Repl_cost_USD/bdg = replacement cost per building per taxonomic type in USD (optional)
+                    Population = total population per taxonomic type in the geocell (optional)
+                    
+        returns the model as geopandas dataframe
         '''
         #init model
         #input_file = 'schemas/SARA_v1.0/SARA_v1.0_data.gpkg'
         res = gp.read_file(input_file,encoding = 'utf-8')
-        taxonomies = res.keys()[res.dtypes=='float64']
-        cols = ['GID_3','NAME_3','geometry',*taxonomies.values]
-        out = res[cols].reset_index()
-        out.columns = ['index','gc_id','name','geometry',*taxonomies.values]
-        return [out,taxonomies]
+        
+        #taxonomies = res.keys()[res.dtypes=='float64']
+        #cols = ['GID_3','NAME_3','geometry',*taxonomies.values]
+        #out = res[cols].reset_index()
+        #out.columns = ['index','gc_id','name','geometry',*taxonomies.values]
+        return (res)
     
     def queryModelfromRoi(self,mod,roi,mode='within'):
         '''
@@ -117,7 +126,6 @@ class Main():
         'within': returns the geometries that are completely inside the ROI
         'intersects': returns the geometries that are intersecting the ROI
         '''
-        #modes=['within','intersects']
         r = roi.geometry.iloc[0]
         if (mode=='within'):
             res=mod[mod.within(r)]
@@ -187,15 +195,11 @@ class Main():
         else:
             raise Exception ("schema {} not supported".format(self.schema))
 
-        #read the exposure model metadata
+        #read the exposure model metadata (with the list of taxonomies)
         self.metadata = nrml.read_metadata(os.path.join(self.path_metadatefile,self.metadata_file))
-
-        #read model from file 
-        in_file = os.path.join(self.path_infile,self.in_file)
-        
-        self.model,self.taxonomies = self.read_model(in_file)#'schemas/SARA_v1.0/SARA_v1.0_data.gpkg')
-
+        self.taxonomies = self.metadata['taxonomies']
         #print(self.taxonomies)
+        
         #get a dataframe with the basic properties of the buildings
         self.dicts = nrml.load_expo_dicts(os.path.join(self.path_expo_dict,self.dict_file))
 
@@ -207,6 +211,10 @@ class Main():
             raise Exception ("taxonomies do not match")
             return (1)
 
+        #read model from file 
+        in_file = os.path.join(self.path_infile,self.in_file)
+        self.model = self.read_model(in_file)
+
         #spatial query
         if (self._check_querymode()):
             self.query_result = self.queryModelfromRoi(self.model,self.roi,self.querymode)
@@ -216,6 +224,7 @@ class Main():
         
         if not (self.query_result.empty):
             self._write_outputs()
+            pass
         else:
             return (1)
             
