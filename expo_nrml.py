@@ -82,6 +82,7 @@ metadata['nonstructural_cost_aggregation_type'] = False
 metadata['contents_cost_aggregation_type'] = False
 metadata['insurance_deductible_is_absolute'] = False
 metadata['insurance_limit_is_absolute'] = False
+metadata['taxonomies'] = ["tax1","tax2","tax3"]
 
 
 dicts: dictionary with the main properties of the assets. The taxonomies (btype) must match
@@ -130,33 +131,37 @@ def write_nrml05_expo(data,metadata,dicts,taxonomies,output_xml):
     node_assets = etree.SubElement(node_em, "assets")
 
     #iterate on the geocells
-    for gid, geocell in data.iterrows():
-
-	#this can be used to vary the cost locally. Currently not used
+    for gid, item in data.iterrows():
+        geocell = pd.DataFrame(json.loads(item.expo))
+        geocell_geometry= item.geometry
+        
+        #this can be used to vary the cost locally. Currently not used
         cost_coeff = 1.0
         #iterate on the taxonomies in the geocell
-        for ir,nbdg in enumerate(geocell[taxonomies]):
+        for ir,bdg_item in geocell.iterrows():
 
             #number of buildings of this building type
-            num_buildings = nbdg
+            num_buildings = bdg_item.Buildings
 
             if (num_buildings > 0):
-                btype = taxonomies[ir]
+                btype = bdg_item.Taxonomy
 
                 #get properties of this building type
                 bdg_prop = get_btype_dicts(btype,dicts)
-
-                asset_id = str(geocell['gc_id'])
+                
+                asset_id = str(bdg_item.id)
 
                 node_asset = etree.SubElement(node_assets, "asset")
                 node_asset.set("id", asset_id)
-                node_asset.set("number", str(int(num_buildings)))
+                node_asset.set("number", str(int(num_buildings+0.5)))
                 node_asset.set("taxonomy", str(btype))
 
                 #location is the one of the corresponding geocell
+                #Note: since geometry is multipolygon, actual location 
+                #may be outside of geocell boundaries
                 node_location = etree.SubElement(node_asset, "location")
-                node_location.set("lon", str(geocell.geometry.centroid.x))
-                node_location.set("lat", str(geocell.geometry.centroid.y))
+                node_location.set("lon", str(geocell_geometry.centroid.x))
+                node_location.set("lat", str(geocell_geometry.centroid.y))
 
                 #structural cost
                 node_costs = etree.SubElement(node_asset, "costs")
