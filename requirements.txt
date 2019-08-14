@@ -1,0 +1,6 @@
+numpy
+scipy
+geopandas
+Rtree
+lxml
+shapely
