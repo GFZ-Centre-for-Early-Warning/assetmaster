@@ -132,6 +132,9 @@ def write_nrml05_expo(data,metadata,dicts,taxonomies,output_xml):
 
     #iterate on the geocells
     for gid, item in data.iterrows():
+        #check if is empty
+        if item.expo == '':
+            continue
         geocell = pd.DataFrame(json.loads(item.expo))
         geocell_geometry= item.geometry
         
