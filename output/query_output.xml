@@ -1,0 +1,1303 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<nrml xmlns:gml="http://www.opengis.net/gml" xmlns="http://openquake.org/xmlns/nrml/0.5">
+  <exposureModel id="SARA_v1.0" category="buildings" taxonomySource="GEM">
+    <description>GEM-SARA Model, project RIESGOS</description>
+    <conversions>
+      <costTypes>
+        <costType name="structural" type="per_asset" unit="USD"/>
+      </costTypes>
+    </conversions>
+    <assets>
+      <asset id="AREA # 13301" number="22" taxonomy="CR+PC/LWAL/H:1,3">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="985250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="86" taxonomy="CR/LWAL/DNO/H:1,3">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="10" taxonomy="CR/LWAL/DNO/H:4,7">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="51500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="95" taxonomy="CR/LWAL/DUC/H:1,3">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="8" taxonomy="CR/LWAL/DUC/H:4,7">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="51765.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="2" taxonomy="CR/LWAL/DUC/H:8,19">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="7" taxonomy="ER+ETR/H:1">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="850000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="45" taxonomy="ER+ETR/H:1,2">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="25"/>
+          <occupancy period="night" occupants="55"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="976" taxonomy="MCF/DNO/H:1">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="2762500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="1944" taxonomy="MCF/DNO/H:1,3">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="2337500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="329" taxonomy="MCF/DUC/H:1,3">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="477" taxonomy="MR/DNO/H:1,3">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="676800.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="182" taxonomy="MR/DUC/H:1,3">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="14" taxonomy="MUR+ADO/H:1">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="32000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="180" taxonomy="MUR+ADO/H:1,2">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="80000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="10"/>
+          <occupancy period="night" occupants="20"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="67" taxonomy="MUR+STDRE/H:1,2">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="105000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="5"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="21" taxonomy="MUR/H:1">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="1101" taxonomy="MUR/H:1,3">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="388" taxonomy="UNK">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="602" taxonomy="W+WLI/H:1">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="2632" taxonomy="W+WLI/H:1,3">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="306" taxonomy="W+WS/H:1">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13301" number="1090" taxonomy="W+WS/H:1,2">
+        <location lon="-70.66517019475837" lat="-33.11566775888655"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="15" taxonomy="CR+PC/LWAL/H:1,3">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="985250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="21" taxonomy="CR/LWAL/DNO/H:1,3">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="31" taxonomy="CR/LWAL/DUC/H:1,3">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="3" taxonomy="ER+ETR/H:1">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="850000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="36" taxonomy="ER+ETR/H:1,2">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="25"/>
+          <occupancy period="night" occupants="55"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="242" taxonomy="MCF/DNO/H:1">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="2762500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="453" taxonomy="MCF/DNO/H:1,3">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="2337500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="87" taxonomy="MCF/DUC/H:1,3">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="127" taxonomy="MR/DNO/H:1,3">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="676800.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="43" taxonomy="MR/DUC/H:1,3">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="6" taxonomy="MUR+ADO/H:1">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="32000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="145" taxonomy="MUR+ADO/H:1,2">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="80000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="10"/>
+          <occupancy period="night" occupants="20"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="20" taxonomy="MUR+STDRE/H:1,2">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="105000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="5"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="17" taxonomy="MUR/H:1">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="338" taxonomy="MUR/H:1,3">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="321" taxonomy="UNK">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="750" taxonomy="W+WLI/H:1">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="2728" taxonomy="W+WLI/H:1,3">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="325" taxonomy="W+WS/H:1">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13302" number="1187" taxonomy="W+WS/H:1,2">
+        <location lon="-70.96330213076503" lat="-33.22482238483435"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="3" taxonomy="CR+PC/LWAL/H:1,3">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="985250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="9" taxonomy="CR/LWAL/DNO/H:1,3">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="22" taxonomy="CR/LWAL/DUC/H:1,3">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="8" taxonomy="ER+ETR/H:1">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="850000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="42" taxonomy="ER+ETR/H:1,2">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="25"/>
+          <occupancy period="night" occupants="55"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="79" taxonomy="MCF/DNO/H:1">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="2762500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="177" taxonomy="MCF/DNO/H:1,3">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="2337500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="34" taxonomy="MCF/DUC/H:1,3">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="56" taxonomy="MR/DNO/H:1,3">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="676800.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="22" taxonomy="MR/DUC/H:1,3">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="18" taxonomy="MUR+ADO/H:1">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="32000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="167" taxonomy="MUR+ADO/H:1,2">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="80000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="10"/>
+          <occupancy period="night" occupants="20"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="8" taxonomy="MUR+STDRE/H:1,2">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="105000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="5"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="11" taxonomy="MUR/H:1">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="152" taxonomy="MUR/H:1,3">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="180" taxonomy="UNK">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="177" taxonomy="W+WLI/H:1">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="860" taxonomy="W+WLI/H:1,3">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="164" taxonomy="W+WS/H:1">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13303" number="468" taxonomy="W+WS/H:1,2">
+        <location lon="-70.90946748658236" lat="-33.0224232543983"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="64" taxonomy="CR+PC/LWAL/H:1,3">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="985250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="420" taxonomy="CR/LWAL/DNO/H:1,3">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="594" taxonomy="CR/LWAL/DNO/H:4,7">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="51500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="276" taxonomy="CR/LWAL/DUC/H:1,3">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="693" taxonomy="CR/LWAL/DUC/H:4,7">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="51765.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="178" taxonomy="CR/LWAL/DUC/H:8,19">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="717" taxonomy="ER+ETR/H:1">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="850000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="1654" taxonomy="ER+ETR/H:1,2">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="25"/>
+          <occupancy period="night" occupants="55"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="581" taxonomy="MCF/DNO/H:1">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="2762500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="2635" taxonomy="MCF/DNO/H:1,3">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="2337500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="1416" taxonomy="MCF/DUC/H:1,3">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="716" taxonomy="MR/DNO/H:1,3">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="676800.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="409" taxonomy="MR/DUC/H:1,3">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="1671" taxonomy="MUR+ADO/H:1">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="32000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="6617" taxonomy="MUR+ADO/H:1,2">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="80000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="10"/>
+          <occupancy period="night" occupants="20"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="100" taxonomy="MUR+STDRE/H:1,2">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="105000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="5"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="1586" taxonomy="MUR/H:1,3">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="456" taxonomy="UNK">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="148" taxonomy="W+WLI/H:1">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="751" taxonomy="W+WLI/H:1,3">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="45" taxonomy="W+WS/H:1">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 13101" number="289" taxonomy="W+WS/H:1,2">
+        <location lon="-70.6180425173311" lat="-33.304637226480665"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="4" taxonomy="CR+PC/LWAL/H:1,3">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="985250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="7" taxonomy="CR/LWAL/DNO/H:1,3">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="0" taxonomy="CR/LWAL/DNO/H:4,7">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="51500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="13" taxonomy="CR/LWAL/DUC/H:1,3">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="12" taxonomy="ER+ETR/H:1">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="850000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="72" taxonomy="ER+ETR/H:1,2">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="25"/>
+          <occupancy period="night" occupants="55"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="79" taxonomy="MCF/DNO/H:1">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="2762500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="157" taxonomy="MCF/DNO/H:1,3">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="2337500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="31" taxonomy="MCF/DUC/H:1,3">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="42" taxonomy="MR/DNO/H:1,3">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="676800.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="15" taxonomy="MR/DUC/H:1,3">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="24" taxonomy="MUR+ADO/H:1">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="32000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="287" taxonomy="MUR+ADO/H:1,2">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="80000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="10"/>
+          <occupancy period="night" occupants="20"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="7" taxonomy="MUR+STDRE/H:1,2">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="105000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="5"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="13" taxonomy="MUR/H:1">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="130" taxonomy="MUR/H:1,3">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="84" taxonomy="UNK">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="196" taxonomy="W+WLI/H:1">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="321" taxonomy="W+WLI/H:1,3">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="126" taxonomy="W+WS/H:1">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05302" number="180" taxonomy="W+WS/H:1,2">
+        <location lon="-70.54448325414592" lat="-32.91162328617876"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="24" taxonomy="CR+PC/LWAL/H:1,3">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="985250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="100" taxonomy="CR/LWAL/DNO/H:1,3">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="25" taxonomy="CR/LWAL/DNO/H:4,7">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="51500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="174" taxonomy="CR/LWAL/DUC/H:1,3">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="9" taxonomy="CR/LWAL/DUC/H:4,7">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="51765.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="1" taxonomy="CR/LWAL/DUC/H:8,19">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="27" taxonomy="ER+ETR/H:1">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="850000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="202" taxonomy="ER+ETR/H:1,2">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="25"/>
+          <occupancy period="night" occupants="55"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="862" taxonomy="MCF/DNO/H:1">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="2762500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="1922" taxonomy="MCF/DNO/H:1,3">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="2337500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="340" taxonomy="MCF/DUC/H:1,3">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="551" taxonomy="MR/DNO/H:1,3">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="676800.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="204" taxonomy="MR/DUC/H:1,3">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="1168750.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="6"/>
+          <occupancy period="night" occupants="12"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="59" taxonomy="MUR+ADO/H:1">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="32000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="809" taxonomy="MUR+ADO/H:1,2">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="80000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="10"/>
+          <occupancy period="night" occupants="20"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="28" taxonomy="MUR+STDRE/H:1,2">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="105000.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="5"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="13" taxonomy="MUR/H:1">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="1276" taxonomy="MUR/H:1,3">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="26250.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="5"/>
+          <occupancy period="night" occupants="10"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="387" taxonomy="UNK">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="140" taxonomy="W+WLI/H:1">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="623" taxonomy="W+WLI/H:1,3">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="212" taxonomy="W+WS/H:1">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="4037500.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="96"/>
+          <occupancy period="night" occupants="192"/>
+        </occupancies>
+      </asset>
+      <asset id="AREA # 05301" number="285" taxonomy="W+WS/H:1,2">
+        <location lon="-70.26872452719952" lat="-32.912310208425914"/>
+        <costs>
+          <cost type="structural" value="10740.0"/>
+        </costs>
+        <occupancies>
+          <occupancy period="day" occupants="3"/>
+          <occupancy period="night" occupants="6"/>
+        </occupancies>
+      </asset>
+    </assets>
+  </exposureModel>
+</nrml>
