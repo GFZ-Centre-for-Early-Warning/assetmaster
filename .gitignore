@@ -4,3 +4,4 @@ output/
 .idea
 .vscode
 .ipynb_checkpoints
+*.pyc
