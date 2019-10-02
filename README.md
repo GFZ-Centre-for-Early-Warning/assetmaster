@@ -1,4 +1,7 @@
 # Assetmaster
+
+[![Build Status](https://travis-ci.com/gfzriesgos/assetmaster.svg?branch=master)](https://travis-ci.com/gfzriesgos/assetmaster)
+
 web service providing exposure models upon geographical query - RIESGOS project
 
 This program reads an exposure model from a geopackage (.gpkg) file and provides a user with a portion of the model according to a bounding box provided (lonminm, lonmax, latmin, latmax), a query mode ("intersects" or "within").

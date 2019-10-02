@@ -1,0 +1,36 @@
+dist: bionic
+language: python
+
+python:
+  - "3.7"
+
+install:
+  - pip3 install -r requirements.txt
+
+stages:
+  - compile
+  - pep8check
+  - pylintcheck
+  - test
+
+jobs:
+  include:
+    - stage: compile
+      script:
+        - python3 -m compileall .
+    - stage: pep8check
+      install:
+        - pip3 install pycodestyle
+      script:
+        - pycodestyle *.py || true
+    - stage: pylintcheck
+      before_script:
+        - pip3 install pylint
+      script:
+        - pylint --exit-zero *.py
+    - stage: test
+      before_script:
+        - sudo apt-get install libspatialindex-dev
+        - pip3 install jupyter nbconvert ipykernel folium matplotlib
+      script:
+        - jupyter nbconvert to notebook --execute --ExecutePreprocessor.kernel_name=python3 --output output.ipynb service_test.ipynb
