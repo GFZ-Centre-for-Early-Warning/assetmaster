@@ -1,5 +1,6 @@
 # Assetmaster
 
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/gfzriesgos/assetmaster)](https://hub.docker.com/r/gfzriesgos/assetmaster)
 [![Build Status](https://travis-ci.com/gfzriesgos/assetmaster.svg?branch=master)](https://travis-ci.com/gfzriesgos/assetmaster)
 
 web service providing exposure models upon geographical query - RIESGOS project
