@@ -94,7 +94,7 @@ def main():
                 'Dwellings': map_for_tax.iloc[0]['Dwellings'],
                 'Buildings': map_for_tax.iloc[0]['Buildings'],
                 'Repl-cost-USD-bdg': map_for_tax.iloc[0]['Repl_cost_'],
-                'Polulation': map_for_tax.iloc[0]['Population'],
+                'Population': map_for_tax.iloc[0]['Population'],
                 'name': name,
                 'Damage': 'D0',
             })
