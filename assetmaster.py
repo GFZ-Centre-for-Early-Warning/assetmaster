@@ -1,4 +1,4 @@
-#!/usr/bin/env/python
+#!/usr/bin/env python3
 
 '''
 Assetmaster
@@ -9,6 +9,7 @@ Command line program to query exposure data from a database/file.
 import argparse
 import os
 import geopandas as gp
+from geopandas.io.file import infer_schema
 from shapely.geometry import Polygon
 #import matplotlib
 #import matplotlib.pyplot as plt
@@ -146,7 +147,18 @@ class Main():
         except OSError:
             #print("OS Error removing geojson file")
             pass
-        dataframe.to_file(filename, driver='GeoJSON')
+        # this is the fallback schema for empty dataframes
+        # since geojson just contains no elements
+        # its fine to not provide any columns
+        fallback_schema = {
+            'geometry': 'MultiPolygon',
+            'properties': {}
+        }
+        if dataframe.empty:
+            schema = fallback_schema
+        else:
+            schema = infer_schema(dataframe)
+        dataframe.to_file(filename, driver='GeoJSON', schema=schema)
         return (0)
 
     def _exportNrml05(self, dataframe, filename, metadata, dicts,taxonomies):
@@ -222,12 +234,7 @@ class Main():
             raise Exception ("Query mode {} not supported".format(self.querymode))
             return (1)
         
-        if not (self.query_result.empty):
-            self._write_outputs()
-            pass
-        else:
-            return (1)
-            
+        self._write_outputs()
         return (0)
 
 
