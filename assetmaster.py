@@ -7,13 +7,15 @@ Command line program to query exposure data from a database/file.
 '''
 
 import argparse
+import glob
 import os
+
 import geopandas as gp
 from geopandas.io.file import infer_schema
 from shapely.geometry import Polygon
-#import matplotlib
-#import matplotlib.pyplot as plt
+
 import expo_nrml as nrml
+import modelprovider
 
 class Main():
     '''
@@ -35,7 +37,6 @@ class Main():
         self.path_expo_dict = self.folder
         self.path_metadatefile = self.folder
         self.path_infile = self.folder
-        self.in_file = self.folder
         self.dict_file = self.folder
         self.metadata_file = self.folder
         self.path_outfile = os.path.join(self.folder,"output")
@@ -90,9 +91,9 @@ class Main():
         return lon-360
     
         
-    def read_model(self,input_file):
+    def read_model(self, glob_gpkg):
         '''
-        read exposure model from a (geopackage) file, 
+        read exposure model from a (or serveral) (geopackage) file, 
         geometry: multipolygon
         columns: 
         fid= (int) id of the geocell
@@ -112,8 +113,14 @@ class Main():
         '''
         #init model
         #input_file = 'schemas/SARA_v1.0/SARA_v1.0_data.gpkg'
-        res = gp.read_file(input_file,encoding = 'utf-8')
-        
+        # now we just use every file in the schemas/SARA_v1.0/*.gpkg glob
+        files = glob.glob(glob_gpkg)
+        models = []
+        for single_model_file in files:
+            single_model_provider = modelprovider.ModelProvider.from_file(single_model_file)
+            models.append(single_model_provider)
+
+        res = modelprovider.MultiModelProvider(models=models)
         #taxonomies = res.keys()[res.dtypes=='float64']
         #cols = ['GID_3','NAME_3','geometry',*taxonomies.values]
         #out = res[cols].reset_index()
@@ -127,11 +134,10 @@ class Main():
         'within': returns the geometries that are completely inside the ROI
         'intersects': returns the geometries that are intersecting the ROI
         '''
-        r = roi.geometry.iloc[0]
         if (mode=='within'):
-            res=mod[mod.within(r)]
+            res=mod.within(roi)
         elif(mode=='intersects'):
-            res=mod[mod.intersects(r)]
+            res=mod.intersects(roi)
         else:
             raise Exception ('queryModelfromRoi: unknown mode')
         return(res)
@@ -201,7 +207,8 @@ class Main():
             self.path_expo_dict = foldername
             self.path_metadatefile = foldername
             self.path_infile = foldername
-            self.in_file = "{}_data.gpkg".format(self.schema)
+            # check here if we can just query all the gpkg files in the folder
+            self.glob_gpkg = '*.gpkg'
             self.dict_file = "{}_prop.csv".format(self.schema)
             self.metadata_file = "{}_meta.json".format(self.schema)
         else:
@@ -224,8 +231,8 @@ class Main():
             return (1)
 
         #read model from file 
-        in_file = os.path.join(self.path_infile,self.in_file)
-        self.model = self.read_model(in_file)
+        glob_gpkg = os.path.join(self.path_infile, self.glob_gpkg)
+        self.model = self.read_model(glob_gpkg)
 
         #spatial query
         if (self._check_querymode()):
