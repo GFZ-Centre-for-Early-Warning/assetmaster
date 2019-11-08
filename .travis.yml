@@ -34,7 +34,7 @@ jobs:
         - sudo apt-get install libspatialindex-dev
         - pip3 install jupyter nbconvert ipykernel folium matplotlib
       script:
-        - jupyter nbconvert to notebook --execute --ExecutePreprocessor.kernel_name=python3 --output output.ipynb service_test.ipynb
+        # - jupyter nbconvert to notebook --execute --ExecutePreprocessor.kernel_name=python3 --output output.ipynb service_test.ipynb
         - python3 test_cmd.py
     - stage: dockerbuild
       install: skip
