@@ -154,5 +154,97 @@ class TestCmdExecution(unittest.TestCase):
 
         self.assertLess(0, len(output))
 
+    def test_in_ecuador_torres(self):
+        """
+        Runs the test with a bounding box for ecuador (torres).
+        Must contain results.
+        """
+
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        path_to_assetmaster = os.path.join(
+            current_dir,
+            'assetmaster.py'
+        )
+
+        lonmin = -78.85
+        lonmax = -78.43
+        latmin = -1.05
+        latmax = -0.62
+        schema = 'Torres_Corredor_et_al_2017'
+        assettype = 'res'
+        querymode = 'intersects'
+
+        subprocess.run(
+            [
+                'python3',
+                path_to_assetmaster,
+                str(lonmin),
+                str(lonmax),
+                str(latmin),
+                str(latmax),
+                schema,
+                assettype,
+                querymode
+            ],
+            check=True,
+        )
+
+        path_to_output_file = os.path.join(
+            current_dir,
+            'output',
+            'query_output.geojson',
+        )
+
+        output = gpd.read_file(path_to_output_file)
+
+        self.assertLess(0, len(output))
+
+    def test_in_ecuador_mavrouli(self):
+        """
+        Runs the test with a bounding box for ecuador (mavrouli).
+        Must contain results.
+        """
+
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        path_to_assetmaster = os.path.join(
+            current_dir,
+            'assetmaster.py'
+        )
+
+        lonmin = -78.85
+        lonmax = -78.43
+        latmin = -1.05
+        latmax = -0.62
+        schema = 'Mavrouli_et_al_2014'
+        assettype = 'res'
+        querymode = 'intersects'
+
+        subprocess.run(
+            [
+                'python3',
+                path_to_assetmaster,
+                str(lonmin),
+                str(lonmax),
+                str(latmin),
+                str(latmax),
+                schema,
+                assettype,
+                querymode
+            ],
+            check=True,
+        )
+
+        path_to_output_file = os.path.join(
+            current_dir,
+            'output',
+            'query_output.geojson',
+        )
+
+        output = gpd.read_file(path_to_output_file)
+
+        self.assertLess(0, len(output))
+
 if __name__ == '__main__':
     unittest.main()

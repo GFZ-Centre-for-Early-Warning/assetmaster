@@ -37,20 +37,15 @@ class Main():
         self.path_expo_dict = self.folder
         self.path_metadatefile = self.folder
         self.path_infile = self.folder
-        self.dict_file = self.folder
-        self.metadata_file = self.folder
         self.path_outfile = os.path.join(self.folder,"output")
         self.out_file_xml = "query_output.xml"
         self.out_file_geojson = 'query_output.geojson'
         
         self.roi = None
-        self.metadata = None
-        self.dicts = None 
-        self.taxonomies = None
 
         #list of supported schemas. 
         #TODO: automatically parse them from a given folder
-        self.supported_schemas = ['SARA_v1.0']
+        self.supported_schemas = ['SARA_v1.0', 'Mavrouli_et_al_2014', 'Torres_Corredor_et_al_2017']
         
         #list of supported query modes
         self.supported_querymodes = ['intersects','within']
@@ -121,10 +116,6 @@ class Main():
             models.append(single_model_provider)
 
         res = modelprovider.MultiModelProvider(models=models)
-        #taxonomies = res.keys()[res.dtypes=='float64']
-        #cols = ['GID_3','NAME_3','geometry',*taxonomies.values]
-        #out = res[cols].reset_index()
-        #out.columns = ['index','gc_id','name','geometry',*taxonomies.values]
         return (res)
     
     def queryModelfromRoi(self,mod,roi,mode='within'):
@@ -167,19 +158,6 @@ class Main():
         dataframe.to_file(filename, driver='GeoJSON', schema=schema)
         return (0)
 
-    def _exportNrml05(self, dataframe, filename, metadata, dicts,taxonomies):
-        '''
-        Export geopandas dataframe as nrml file
-        '''
-        # remove file if exists
-        try: 
-            os.remove(filename)
-        except OSError:
-            #print("OS Error removing nrml file")
-            pass
-        xml_string = nrml.write_nrml05_expo(dataframe,metadata,dicts,taxonomies,filename)
-        return (0)
-
     def _write_outputs(self):
         '''
         Export query result as nrml and geojson files
@@ -187,8 +165,6 @@ class Main():
         output_geojson = os.path.join(self.path_outfile,self.out_file_geojson)
         self._exportGeoJson(self.query_result,output_geojson)
         output_xml = os.path.join(self.path_outfile,self.out_file_xml)
-        self._exportNrml05(self.query_result, output_xml, self.metadata, 
-                           self.dicts,self.taxonomies)
     
     def run(self):
         '''
@@ -209,26 +185,9 @@ class Main():
             self.path_infile = foldername
             # check here if we can just query all the gpkg files in the folder
             self.glob_gpkg = '*.gpkg'
-            self.dict_file = "{}_prop.csv".format(self.schema)
-            self.metadata_file = "{}_meta.json".format(self.schema)
+            metadata_file = "{}_meta.json".format(self.schema)
         else:
             raise Exception ("schema {} not supported".format(self.schema))
-
-        #read the exposure model metadata (with the list of taxonomies)
-        self.metadata = nrml.read_metadata(os.path.join(self.path_metadatefile,self.metadata_file))
-        self.taxonomies = self.metadata['taxonomies']
-        #print(self.taxonomies)
-        
-        #get a dataframe with the basic properties of the buildings
-        self.dicts = nrml.load_expo_dicts(os.path.join(self.path_expo_dict,self.dict_file))
-
-        #read taxonomies from the dict file
-        btypes = self.dicts.btype
-
-        #check that the asset taxonomies match
-        if not (set(self.taxonomies) <= set(btypes)):
-            raise Exception ("taxonomies do not match")
-            return (1)
 
         #read model from file 
         glob_gpkg = os.path.join(self.path_infile, self.glob_gpkg)
