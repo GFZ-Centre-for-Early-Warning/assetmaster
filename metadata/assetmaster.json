@@ -15,7 +15,6 @@
         { "title" : "querymode",           "useAs": "commandLineArgument","type": "string", "default": "intersects", "allowed": ["intersects","within"]}
      ],
     "output": [
-        { "title": "selectedRowsXml", "readFrom": "file", "path": "output/query_output.xml", "type": "xml"},
         { "title": "selectedRowsGeoJson", "readFrom": "file", "path": "output/query_output.geojson", "type": "json"}
     ]
 }
