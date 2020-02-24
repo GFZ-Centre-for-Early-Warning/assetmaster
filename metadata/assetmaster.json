@@ -10,12 +10,11 @@
         { "title" : "lonmax",              "useAs": "commandLineArgument", "type": "double", "default": "-71.4"},
         { "title" : "latmin",              "useAs": "commandLineArgument", "type": "double", "default": "-33.2"},
         { "title" : "latmax",              "useAs": "commandLineArgument", "type": "double", "default": "-33.0"},
-        { "title" : "schema",              "useAs": "commandLineArgument", "type": "string", "default": "SARA_v1.0", "allowed": ["SARA_v1.0"]},
+        { "title" : "schema",              "useAs": "commandLineArgument", "type": "string", "default": "SARA_v1.0", "allowed": ["SARA_v1.0", "Mavrouli_et_al_2014", "Torres_Corredor_et_al_2017"]},
         { "title" : "assettype",           "useAs": "commandLineArgument", "type": "string", "default": "res", "allowed": ["res"]},
         { "title" : "querymode",           "useAs": "commandLineArgument","type": "string", "default": "intersects", "allowed": ["intersects","within"]}
      ],
     "output": [
-        { "title": "selectedRowsXml", "readFrom": "file", "path": "output/query_output.xml", "type": "xml"},
         { "title": "selectedRowsGeoJson", "readFrom": "file", "path": "output/query_output.geojson", "type": "json"}
     ]
 }

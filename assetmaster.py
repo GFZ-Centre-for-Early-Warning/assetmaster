@@ -1,4 +1,4 @@
-#!/usr/bin/env/python
+#!/usr/bin/env python3
 
 '''
 Assetmaster
@@ -7,12 +7,15 @@ Command line program to query exposure data from a database/file.
 '''
 
 import argparse
+import glob
 import os
+
 import geopandas as gp
+from geopandas.io.file import infer_schema
 from shapely.geometry import Polygon
-#import matplotlib
-#import matplotlib.pyplot as plt
+
 import expo_nrml as nrml
+import modelprovider
 
 class Main():
     '''
@@ -34,21 +37,15 @@ class Main():
         self.path_expo_dict = self.folder
         self.path_metadatefile = self.folder
         self.path_infile = self.folder
-        self.in_file = self.folder
-        self.dict_file = self.folder
-        self.metadata_file = self.folder
         self.path_outfile = os.path.join(self.folder,"output")
         self.out_file_xml = "query_output.xml"
         self.out_file_geojson = 'query_output.geojson'
         
         self.roi = None
-        self.metadata = None
-        self.dicts = None 
-        self.taxonomies = None
 
         #list of supported schemas. 
         #TODO: automatically parse them from a given folder
-        self.supported_schemas = ['SARA_v1.0']
+        self.supported_schemas = ['SARA_v1.0', 'Mavrouli_et_al_2014', 'Torres_Corredor_et_al_2017']
         
         #list of supported query modes
         self.supported_querymodes = ['intersects','within']
@@ -89,9 +86,9 @@ class Main():
         return lon-360
     
         
-    def read_model(self,input_file):
+    def read_model(self, glob_gpkg):
         '''
-        read exposure model from a (geopackage) file, 
+        read exposure model from a (or serveral) (geopackage) file, 
         geometry: multipolygon
         columns: 
         fid= (int) id of the geocell
@@ -111,12 +108,14 @@ class Main():
         '''
         #init model
         #input_file = 'schemas/SARA_v1.0/SARA_v1.0_data.gpkg'
-        res = gp.read_file(input_file,encoding = 'utf-8')
-        
-        #taxonomies = res.keys()[res.dtypes=='float64']
-        #cols = ['GID_3','NAME_3','geometry',*taxonomies.values]
-        #out = res[cols].reset_index()
-        #out.columns = ['index','gc_id','name','geometry',*taxonomies.values]
+        # now we just use every file in the schemas/SARA_v1.0/*.gpkg glob
+        files = glob.glob(glob_gpkg)
+        models = []
+        for single_model_file in files:
+            single_model_provider = modelprovider.ModelProvider.from_file(single_model_file)
+            models.append(single_model_provider)
+
+        res = modelprovider.MultiModelProvider(models=models)
         return (res)
     
     def queryModelfromRoi(self,mod,roi,mode='within'):
@@ -126,11 +125,10 @@ class Main():
         'within': returns the geometries that are completely inside the ROI
         'intersects': returns the geometries that are intersecting the ROI
         '''
-        r = roi.geometry.iloc[0]
         if (mode=='within'):
-            res=mod[mod.within(r)]
+            res=mod.within(roi)
         elif(mode=='intersects'):
-            res=mod[mod.intersects(r)]
+            res=mod.intersects(roi)
         else:
             raise Exception ('queryModelfromRoi: unknown mode')
         return(res)
@@ -146,20 +144,18 @@ class Main():
         except OSError:
             #print("OS Error removing geojson file")
             pass
-        dataframe.to_file(filename, driver='GeoJSON')
-        return (0)
-
-    def _exportNrml05(self, dataframe, filename, metadata, dicts,taxonomies):
-        '''
-        Export geopandas dataframe as nrml file
-        '''
-        # remove file if exists
-        try: 
-            os.remove(filename)
-        except OSError:
-            #print("OS Error removing nrml file")
-            pass
-        xml_string = nrml.write_nrml05_expo(dataframe,metadata,dicts,taxonomies,filename)
+        # this is the fallback schema for empty dataframes
+        # since geojson just contains no elements
+        # its fine to not provide any columns
+        fallback_schema = {
+            'geometry': 'MultiPolygon',
+            'properties': {}
+        }
+        if dataframe.empty:
+            schema = fallback_schema
+        else:
+            schema = infer_schema(dataframe)
+        dataframe.to_file(filename, driver='GeoJSON', schema=schema)
         return (0)
 
     def _write_outputs(self):
@@ -169,8 +165,6 @@ class Main():
         output_geojson = os.path.join(self.path_outfile,self.out_file_geojson)
         self._exportGeoJson(self.query_result,output_geojson)
         output_xml = os.path.join(self.path_outfile,self.out_file_xml)
-        self._exportNrml05(self.query_result, output_xml, self.metadata, 
-                           self.dicts,self.taxonomies)
     
     def run(self):
         '''
@@ -189,31 +183,15 @@ class Main():
             self.path_expo_dict = foldername
             self.path_metadatefile = foldername
             self.path_infile = foldername
-            self.in_file = "{}_data.gpkg".format(self.schema)
-            self.dict_file = "{}_prop.csv".format(self.schema)
-            self.metadata_file = "{}_meta.json".format(self.schema)
+            # check here if we can just query all the gpkg files in the folder
+            self.glob_gpkg = '*.gpkg'
+            metadata_file = "{}_meta.json".format(self.schema)
         else:
             raise Exception ("schema {} not supported".format(self.schema))
 
-        #read the exposure model metadata (with the list of taxonomies)
-        self.metadata = nrml.read_metadata(os.path.join(self.path_metadatefile,self.metadata_file))
-        self.taxonomies = self.metadata['taxonomies']
-        #print(self.taxonomies)
-        
-        #get a dataframe with the basic properties of the buildings
-        self.dicts = nrml.load_expo_dicts(os.path.join(self.path_expo_dict,self.dict_file))
-
-        #read taxonomies from the dict file
-        btypes = self.dicts.btype
-
-        #check that the asset taxonomies match
-        if not (set(self.taxonomies) <= set(btypes)):
-            raise Exception ("taxonomies do not match")
-            return (1)
-
         #read model from file 
-        in_file = os.path.join(self.path_infile,self.in_file)
-        self.model = self.read_model(in_file)
+        glob_gpkg = os.path.join(self.path_infile, self.glob_gpkg)
+        self.model = self.read_model(glob_gpkg)
 
         #spatial query
         if (self._check_querymode()):
@@ -222,12 +200,7 @@ class Main():
             raise Exception ("Query mode {} not supported".format(self.querymode))
             return (1)
         
-        if not (self.query_result.empty):
-            self._write_outputs()
-            pass
-        else:
-            return (1)
-            
+        self._write_outputs()
         return (0)
 
 

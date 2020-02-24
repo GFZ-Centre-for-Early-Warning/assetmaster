@@ -1,0 +1,20 @@
+{
+    "id": "Mavrouli_et_al_2014",
+    "category": "buildings",
+    "taxonomy_source": "Zuccaro_2013", 
+    "description": "Zuccaro_2013, project RIESGOS", 
+	"taxonomies":[            
+            "RC_LD",
+            "RC_MD",
+            "RC_S_HD",
+            "W_MR_LD",
+            "W_MR_MD",
+            "W_MR_HD"
+        ],
+    "structural_cost_aggregation_type": "per_asset", 
+    "structural_cost_currency": "USD", 
+    "nonstructural_cost_aggregation_type": false, 
+    "contents_cost_aggregation_type": false, 
+    "insurance_deductible_is_absolute": false, 
+    "insurance_limit_is_absolute": false
+}
