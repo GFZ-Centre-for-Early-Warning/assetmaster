@@ -44,6 +44,7 @@ class TestCmdExecution(unittest.TestCase):
         schema = 'SARA_v1.0'
         assettype = 'res'
         querymode = 'intersects'
+        model = 'ValpCVSaraDownscaled'
 
         subprocess.run(
             [
@@ -55,7 +56,8 @@ class TestCmdExecution(unittest.TestCase):
                 str(latmax),
                 schema,
                 assettype,
-                querymode
+                querymode,
+                model,
             ],
             check=True,
         )
@@ -90,6 +92,7 @@ class TestCmdExecution(unittest.TestCase):
         schema = 'SARA_v1.0'
         assettype = 'res'
         querymode = 'intersects'
+        model = 'LimaCVT1_PD70_TI30_5000'
 
         subprocess.run(
             [
@@ -101,7 +104,8 @@ class TestCmdExecution(unittest.TestCase):
                 str(latmax),
                 schema,
                 assettype,
-                querymode
+                querymode,
+                model,
             ],
             check=True,
         )
@@ -136,6 +140,7 @@ class TestCmdExecution(unittest.TestCase):
         schema = 'SARA_v1.0'
         assettype = 'res'
         querymode = 'intersects'
+        model = 'ValpCVTBayesian'
 
         subprocess.run(
             [
@@ -147,7 +152,8 @@ class TestCmdExecution(unittest.TestCase):
                 str(latmax),
                 schema,
                 assettype,
-                querymode
+                querymode,
+                model,
             ],
             check=True,
         )
@@ -182,6 +188,7 @@ class TestCmdExecution(unittest.TestCase):
         schema = 'Torres_Corredor_et_al_2017'
         assettype = 'res'
         querymode = 'intersects'
+        model = 'LatacungaRuralAreas'
 
         subprocess.run(
             [
@@ -193,7 +200,8 @@ class TestCmdExecution(unittest.TestCase):
                 str(latmax),
                 schema,
                 assettype,
-                querymode
+                querymode,
+                model,
             ],
             check=True,
         )
@@ -228,6 +236,7 @@ class TestCmdExecution(unittest.TestCase):
         schema = 'Mavrouli_et_al_2014'
         assettype = 'res'
         querymode = 'intersects'
+        model = 'LatacungaRuralAreas'
 
         subprocess.run(
             [
@@ -239,7 +248,8 @@ class TestCmdExecution(unittest.TestCase):
                 str(latmax),
                 schema,
                 assettype,
-                querymode
+                querymode,
+                model,
             ],
             check=True,
         )

@@ -40,6 +40,7 @@ class Main():
         self.schema = args.schema
         self.assettype = args.assettype
         self.querymode = args.querymode
+        self.model = args.model
         
         #i/o settings
         self.path_expo_dict = self.folder
@@ -115,7 +116,7 @@ class Main():
         returns the model as geopandas dataframe
         '''
         #init model
-        #input_file = 'schemas/SARA_v1.0/SARA_v1.0_data.gpkg'
+        #input_file = 'schemas/SARA_v1.0/ValCVTBayesian/SARA_v1.0_data.gpkg'
         # now we just use every file in the schemas/SARA_v1.0/*.gpkg glob
         files = glob.glob(glob_gpkg)
         models = []
@@ -187,6 +188,8 @@ class Main():
         self._compute_roi()
         
         if (self._check_schema()):
+            # The structure is app root ./schemas/SARA_v1.0/ValpCVTBayesian/SARA_v1.0_data.gpkg
+            # Which is schemas/{schema}/{model}/*.gpkg
             foldername = os.path.join(self.folder,"schemas/{}".format(self.schema))
             self.path_expo_dict = foldername
             self.path_metadatefile = foldername
@@ -198,7 +201,7 @@ class Main():
             raise Exception ("schema {} not supported".format(self.schema))
 
         #read model from file 
-        glob_gpkg = os.path.join(self.path_infile, self.glob_gpkg)
+        glob_gpkg = os.path.join(self.path_infile, self.model, self.glob_gpkg)
         self.model = self.read_model(glob_gpkg)
 
         #spatial query
@@ -255,6 +258,10 @@ class Main():
             help='''Query Mode ('contains' / 'intersects')''',
             type=str,
             default='intersects')
+        arg_parser.add_argument(
+            'model',
+            help='Model to use (for example Lima CVT 70 PI 30 TI with 5000 cells).',
+            type=str)
         args = arg_parser.parse_args()
         #print(args)
 
