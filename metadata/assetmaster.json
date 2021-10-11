@@ -12,7 +12,23 @@
         { "title" : "latmax",              "useAs": "commandLineArgument", "type": "double", "default": "-33.0"},
         { "title" : "schema",              "useAs": "commandLineArgument", "type": "string", "default": "SARA_v1.0", "allowed": ["SARA_v1.0", "Mavrouli_et_al_2014", "Torres_Corredor_et_al_2017"]},
         { "title" : "assettype",           "useAs": "commandLineArgument", "type": "string", "default": "res", "allowed": ["res"]},
-        { "title" : "querymode",           "useAs": "commandLineArgument","type": "string", "default": "intersects", "allowed": ["intersects","within"]}
+        { "title" : "querymode",           "useAs": "commandLineArgument","type": "string", "default": "intersects", "allowed": ["intersects","within"]},
+        { "title": "model",
+          "useAs": "commandLineArgument",
+          "type": "string",
+          "allowed": [
+              "ValpCVTSaraDownscaled",
+              "ValpCVTBayesian",
+              "LimaCVT1_PD70_TI30_5000",
+              "LimaCVT1_PD70_TI30_10000",
+              "LimaCVT1_PD70_TI30_50000",
+              "LimaCVT1_PD60_TI40_5000",
+              "LimaCVT1_PD60_TI40_10000",
+              "LimaCVT1_PD60_TI40_50000",
+              "LimaBlocks",
+              "LatacungaRuralAreas"
+          ]
+        }
      ],
     "output": [
         { "title": "selectedRowsGeoJson", "readFrom": "file", "path": "output/query_output.geojson", "type": "json"}
