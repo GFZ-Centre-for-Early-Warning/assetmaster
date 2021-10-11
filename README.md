@@ -11,7 +11,7 @@ A given set of assets can be specified (currently only "res" for residential bui
 
 ### Citation
 
-Pittore, M., Gomez-Zapata, J. C., Brinckmann, N., Rüster, M. (2021): Assetmaster and Modelprop: web services to serve building exposure models and fragility functions for physical vulnerability to natural-hazards. V. 1.0. GFZ Data Services. https://doi.org/10.5880/riesgos.2021.005
+Pittore, Massimiliano; Gomez-Zapata, Juan Camilo; Brinckmann, Nils; Rüster, Matthias (2021): Assetmaster and Modelprop: web services to serve building exposure models and fragility functions for physical vulnerability to natural-hazards. V. 1.0. GFZ Data Services. https://doi.org/10.5880/riesgos.2021.005
 
 ### example (command line)
 python3.7 assetmaster.py -71.8 -71.4 -33.2 -33.0 SARA_v1.0 res intersects
