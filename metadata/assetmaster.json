@@ -20,11 +20,11 @@
               "ValpCVTSaraDownscaled",
               "ValpCVTBayesian",
               "LimaCVT1_PD70_TI30_5000",
-              "LimaCVT1_PD70_TI30_10000",
-              "LimaCVT1_PD70_TI30_50000",
-              "LimaCVT1_PD60_TI40_5000",
-              "LimaCVT1_PD60_TI40_10000",
-              "LimaCVT1_PD60_TI40_50000",
+              "LimaCVT2_PD70_TI30_10000",
+              "LimaCVT3_PD70_TI30_50000",
+              "LimaCVT4_PD60_TI40_5000",
+              "LimaCVT5_PD60_TI40_10000",
+              "LimaCVT6_PD60_TI40_50000",
               "LimaBlocks",
               "LatacungaRuralAreas"
           ]
