@@ -19,12 +19,12 @@
           "allowed": [
               "ValpCVTSaraDownscaled",
               "ValpCVTBayesian",
-              "LimaCVT1_PD70_TI30_5000",
-              "LimaCVT2_PD70_TI30_10000",
-              "LimaCVT3_PD70_TI30_50000",
-              "LimaCVT4_PD60_TI40_5000",
-              "LimaCVT5_PD60_TI40_10000",
-              "LimaCVT6_PD60_TI40_50000",
+              "LimaCVT1_PD30_TI70_5000",
+              "LimaCVT2_PD30_TI70_10000",
+              "LimaCVT3_PD30_TI70_50000",
+              "LimaCVT4_PD40_TI60_5000",
+              "LimaCVT5_PD40_TI60_10000",
+              "LimaCVT6_PD40_TI60_50000",
               "LimaBlocks",
               "LatacungaRuralAreas"
           ]
