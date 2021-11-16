@@ -41,7 +41,7 @@ class TestCmdExecution(unittest.TestCase):
         schema = "SARA_v1.0"
         assettype = "res"
         querymode = "intersects"
-        model = "ValpCVSaraDownscaled"
+        model = "ValpCVTSaraDownscaled"
 
         subprocess.run(
             [
@@ -86,7 +86,7 @@ class TestCmdExecution(unittest.TestCase):
         schema = "SARA_v1.0"
         assettype = "res"
         querymode = "intersects"
-        model = "LimaCVT1_PD70_TI30_5000"
+        model = "LimaCVT1_PD30_TI70_5000"
 
         subprocess.run(
             [
