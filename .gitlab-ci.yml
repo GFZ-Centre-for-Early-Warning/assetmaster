@@ -27,8 +27,8 @@ cache:
     - .pip
 
 .install_requirements: &install_requirements
-  - apt-get update && apt-get upgrade -y
-  - apt-get install python3 git python3-pip libspatialindex-dev -y
+  - DEBIAN_FRONTEND=noninteractive apt-get update && apt-get upgrade -y
+  - DEBIAN_FRONTEND=noninteractive apt-get install python3 git python3-pip libspatialindex-dev -y
   - pip3 install --cache-dir=.pip -r requirements.txt
 
 verify_python:
@@ -66,7 +66,6 @@ python_pylint:
     - *install_requirements
     - pip3 install --cache-dir=.pip pylint
   script:
-    - pip3 install --cache-dir=.pip pylint
     - shopt -s globstar && pylint --fail-under=8 {,**/}*.py
 
 python_black:
