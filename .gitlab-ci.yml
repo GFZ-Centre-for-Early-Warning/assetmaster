@@ -26,30 +26,68 @@ cache:
   paths:
     - .pip
 
+.install_requirements: &install_requirements
+  - apt-get update && apt-get upgrade -y
+  - apt-get install python3 git python3-pip libspatialindex-dev -y
+  - pip3 install --cache-dir=.pip -r requirements.txt
+
 verify_python:
   image: ubuntu:18.04
   stage: test
   tags:
     - group
   before_script:
-    - apt-get update && apt-get upgrade
-    - apt-get install python3 git python3-pip libspatialindex-dev -y
-    - pip3 install --cache-dir=.pip -r requirements.txt
+    - *install_requirements
     - pip3 install --cache-dir=.pip pycodestyle pylint black==21.4b2
   script:
-    # compile python scripts
-    - find . -iname '*.py' -exec python3 -m compileall \{\} \;
+    - python3 -m compileall .
 
-    # run pylint for all python scripts
-    - find . -iname '*.py' -exec python3 -m pylint --exit-zero \{\} \;
+python_pycodestyle:
+  image: ubuntu:18.04
+  stage: test
+  # TODO: fix code to fit with PEP8 guidelines
+  allow_failure: true
+  tags:
+    - group
+  before_script:
+    - *install_requirements
+    - pip3 install --cache-dir=.pip pycodestyle
+  script:
+    - shopt -s globstar && pycodestyle {,**/}*.py
 
-    # run pycodestyle for all python scripts
-    - find . -iname '*.py' -exec python3 -m pycodestyle \{\} \; || true
+python_pylint:
+  image: ubuntu:18.04
+  stage: test
+  # TODO: fix code to get a better pylint rating
+  allow_failure: true
+  tags:
+    - group
+  before_script:
+    - *install_requirements
+    - pip3 install --cache-dir=.pip pylint
+  script:
+    - pip3 install --cache-dir=.pip pylint
+    - shopt -s globstar && pylint --fail-under=8 {,**/}*.py
 
-    # check coding style with black
+python_black:
+  image: ubuntu:18.04
+  stage: test
+  tags:
+    - group
+  before_script:
+    - *install_requirements
+    - pip3 install --cache-dir=.pip black==21.4b2
+  script:
     - black --check .
 
-    # run the tests
+run_tests:
+  image: ubuntu:18.04
+  stage: test
+  tags:
+    - group
+  before_script:
+    - *install_requirements
+  script:
     - python3 test_cmd.py
 
 verify_json:
