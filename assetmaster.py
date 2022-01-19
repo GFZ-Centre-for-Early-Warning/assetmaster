@@ -206,7 +206,9 @@ class Main:
         if self._check_schema():
             # The structure is app root ./schemas/SARA_v1.0/ValpCVTBayesian/SARA_v1.0_data.gpkg
             # Which is schemas/{schema}/{model}/*.gpkg
-            foldername = os.path.join(self.folder, "schemas/{}".format(self.schema))
+            foldername = os.path.join(
+                self.folder, "schemas/{}".format(self.schema)
+            )
             self.path_expo_dict = foldername
             self.path_metadatefile = foldername
             self.path_infile = foldername
@@ -226,7 +228,9 @@ class Main:
                 self.model, self.roi, self.querymode
             )
         else:
-            raise Exception("Query mode {} not supported".format(self.querymode))
+            raise Exception(
+                "Query mode {} not supported".format(self.querymode)
+            )
             return 1
 
         self._write_outputs()

@@ -81,7 +81,9 @@ def main():
         # same structure as in the old sara model
         # for chile
         name = possible_names[0]
-        geometry = get_geometry_and_assume_all_are_equal(map_for_gid["geometry"])
+        geometry = get_geometry_and_assume_all_are_equal(
+            map_for_gid["geometry"]
+        )
 
         csv_by_tax = csv_for_gid.groupby("taxonomy")
         map_by_tax = map_for_gid.groupby("Taxonomy")

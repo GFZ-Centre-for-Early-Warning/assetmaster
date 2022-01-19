@@ -134,12 +134,16 @@ def write_nrml05_expo(data, metadata, dicts, taxonomies, output_xml):
     if metadata["nonstructural_cost_aggregation_type"]:
         node_cost_type_ns = etree.SubElement(node_cost_types, "costType")
         node_cost_type_ns.set("name", "nonstructural")
-        node_cost_type_ns.set("type", metadata["nonstructural_cost_aggregation_type"])
+        node_cost_type_ns.set(
+            "type", metadata["nonstructural_cost_aggregation_type"]
+        )
         node_cost_type_ns.set("unit", metadata["nonstructural_cost_currency"])
     if metadata["contents_cost_aggregation_type"]:
         node_cost_type_c = etree.SubElement(node_cost_types, "costType")
         node_cost_type_c.set("name", "contents")
-        node_cost_type_c.set("type", metadata["contents_cost_aggregation_type"])
+        node_cost_type_c.set(
+            "type", metadata["contents_cost_aggregation_type"]
+        )
         node_cost_type_c.set("unit", metadata["contents_cost_currency"])
 
     if metadata["insurance_deductible_is_absolute"]:
@@ -149,7 +153,9 @@ def write_nrml05_expo(data, metadata, dicts, taxonomies, output_xml):
         )
     if metadata["insurance_limit_is_absolute"]:
         node_limit = etree.SubElement(node_conv, "insuranceLimit")
-        node_limit.set("isAbsolute", metadata["insurance_limit_is_absolute"].lower())
+        node_limit.set(
+            "isAbsolute", metadata["insurance_limit_is_absolute"].lower()
+        )
 
     node_assets = etree.SubElement(node_em, "assets")
 
@@ -203,7 +209,9 @@ def write_nrml05_expo(data, metadata, dicts, taxonomies, output_xml):
                 node_occ_day.set("period", "day")
                 node_occ_day.set("occupants", str(bdg_prop["nocc_day"]))
 
-                node_occ_night = etree.SubElement(node_occupancies, "occupancy")
+                node_occ_night = etree.SubElement(
+                    node_occupancies, "occupancy"
+                )
                 node_occ_night.set("period", "night")
                 node_occ_night.set("occupants", str(bdg_prop["nocc_night"]))
 

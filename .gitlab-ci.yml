@@ -38,7 +38,6 @@ verify_python:
     - group
   before_script:
     - *install_requirements
-    - pip3 install --cache-dir=.pip pycodestyle pylint black==21.4b2
   script:
     - python3 -m compileall .
 
@@ -77,7 +76,7 @@ python_black:
     - *install_requirements
     - pip3 install --cache-dir=.pip black==21.4b2
   script:
-    - black --check .
+    - black -l 79 --check .
 
 run_tests:
   image: ubuntu:18.04

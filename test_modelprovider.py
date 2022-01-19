@@ -33,7 +33,9 @@ class TestMultiModelProvider(unittest.TestCase):
         Sets up the multi model setting.
         """
         # ~~ germany
-        geom1 = self._geom_from_bounding_box(lonmin=50, lonmax=55, latmin=10, latmax=15)
+        geom1 = self._geom_from_bounding_box(
+            lonmin=50, lonmax=55, latmin=10, latmax=15
+        )
         # ~~ chile
         geom2 = self._geom_from_bounding_box(
             lonmin=-80, lonmax=-65, latmin=-70, latmax=-30
@@ -69,14 +71,18 @@ class TestMultiModelProvider(unittest.TestCase):
             index=[0],
             crs=crs,
             geometry=[
-                self._geom_from_bounding_box(lonmin=0, lonmax=180, latmin=0, latmax=90)
+                self._geom_from_bounding_box(
+                    lonmin=0, lonmax=180, latmin=0, latmax=90
+                )
             ],
         )
         self.roi_smaller_g = gpd.GeoDataFrame(
             index=[0],
             crs=crs,
             geometry=[
-                self._geom_from_bounding_box(lonmin=51, lonmax=54, latmin=11, latmax=14)
+                self._geom_from_bounding_box(
+                    lonmin=51, lonmax=54, latmin=11, latmax=14
+                )
             ],
         )
 
@@ -94,7 +100,9 @@ class TestMultiModelProvider(unittest.TestCase):
 
         models_within_world = self.model_provider.within(self.roi_world)
         models_within_ne = self.model_provider.within(self.roi_ne)
-        models_within_smaller_g = self.model_provider.within(self.roi_smaller_g)
+        models_within_smaller_g = self.model_provider.within(
+            self.roi_smaller_g
+        )
 
         self.assertEqual(len(models_within_world), 2)
         self.assertEqual(len(models_within_ne), 1)
@@ -108,7 +116,9 @@ class TestMultiModelProvider(unittest.TestCase):
         It should only give back the elements from the model
         that intersects with the roi.
         """
-        models_intersection_world = self.model_provider.intersects(self.roi_world)
+        models_intersection_world = self.model_provider.intersects(
+            self.roi_world
+        )
         models_intersection_ne = self.model_provider.intersects(self.roi_ne)
         models_intersection_smaller_g = self.model_provider.intersects(
             self.roi_smaller_g
@@ -133,13 +143,17 @@ class TestModelProvider(unittest.TestCase):
         """
 
         # ~~ germany
-        geom1 = self._geom_from_bounding_box(lonmin=50, lonmax=55, latmin=10, latmax=15)
+        geom1 = self._geom_from_bounding_box(
+            lonmin=50, lonmax=55, latmin=10, latmax=15
+        )
         # ~~ chile
         geom2 = self._geom_from_bounding_box(
             lonmin=-80, lonmax=-65, latmin=-70, latmax=-30
         )
 
-        df = pd.DataFrame({"name": ["germany", "chile"], "geometry": [geom1, geom2]})
+        df = pd.DataFrame(
+            {"name": ["germany", "chile"], "geometry": [geom1, geom2]}
+        )
 
         crs = {"init": 3226}
 
@@ -162,14 +176,18 @@ class TestModelProvider(unittest.TestCase):
             index=[0],
             crs=crs,
             geometry=[
-                self._geom_from_bounding_box(lonmin=0, lonmax=180, latmin=0, latmax=90)
+                self._geom_from_bounding_box(
+                    lonmin=0, lonmax=180, latmin=0, latmax=90
+                )
             ],
         )
         self.roi_smaller_g = gpd.GeoDataFrame(
             index=[0],
             crs=crs,
             geometry=[
-                self._geom_from_bounding_box(lonmin=51, lonmax=54, latmin=11, latmax=14)
+                self._geom_from_bounding_box(
+                    lonmin=51, lonmax=54, latmin=11, latmax=14
+                )
             ],
         )
 
@@ -187,7 +205,9 @@ class TestModelProvider(unittest.TestCase):
 
         models_within_world = self.model_provider.within(self.roi_world)
         models_within_ne = self.model_provider.within(self.roi_ne)
-        models_within_smaller_g = self.model_provider.within(self.roi_smaller_g)
+        models_within_smaller_g = self.model_provider.within(
+            self.roi_smaller_g
+        )
 
         self.assertEqual(len(models_within_world), 2)
         self.assertEqual(len(models_within_ne), 1)
@@ -201,7 +221,9 @@ class TestModelProvider(unittest.TestCase):
         It should only give back the elements from the model
         that intersects with the roi.
         """
-        models_intersection_world = self.model_provider.intersects(self.roi_world)
+        models_intersection_world = self.model_provider.intersects(
+            self.roi_world
+        )
         models_intersection_ne = self.model_provider.intersects(self.roi_ne)
         models_intersection_smaller_g = self.model_provider.intersects(
             self.roi_smaller_g
