@@ -1,6 +1,6 @@
 {
     "title": "AssetmasterProcess",
-    "imageId": "assetmaster:latest",
+    "imageId": "gfzriesgos/assetmaster:latest",
     "workingDirectory": "/usr/share/git/assetmaster",
     "commandToExecute": "python3 assetmaster.py",
     "exitValueHandler": "logging",
