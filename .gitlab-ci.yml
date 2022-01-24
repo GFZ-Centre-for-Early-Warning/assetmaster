@@ -125,14 +125,15 @@ dockerbuild_tagged:
   rules:
     - if: $CI_COMMIT_TAG
   script:
-    - docker build -t assetmaster:$CI_COMMIT_TAG -f metadata/Dockerfile .
+    - sed -i -e "s@:latest@:${CI_COMMIT_TAG}@g" metadata/assetmaster.json
+    - docker build -t assetmaster:${CI_COMMIT_TAG} -f metadata/Dockerfile .
 
     # push image to Docker Hub
-    - docker tag assetmaster:$CI_COMMIT_TAG gfzriesgos/assetmaster:$CI_COMMIT_TAG
+    - docker tag assetmaster:${CI_COMMIT_TAG} gfzriesgos/assetmaster:${CI_COMMIT_TAG}
     - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
-    - docker push gfzriesgos/assetmaster:$CI_COMMIT_TAG
+    - docker push gfzriesgos/assetmaster:${CI_COMMIT_TAG}
 
     # push image to GitLab Container Registry
-    - docker tag assetmaster:$CI_COMMIT_TAG git.gfz-potsdam.de:5000/id2/riesgos/assetmaster:$CI_COMMIT_TAG
+    - docker tag assetmaster:${CI_COMMIT_TAG} git.gfz-potsdam.de:5000/id2/riesgos/assetmaster:${CI_COMMIT_TAG}
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker push git.gfz-potsdam.de:5000/id2/riesgos/assetmaster:$CI_COMMIT_TAG
+    - docker push git.gfz-potsdam.de:5000/id2/riesgos/assetmaster:${CI_COMMIT_TAG}
