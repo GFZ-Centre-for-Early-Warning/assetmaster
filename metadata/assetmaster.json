@@ -19,6 +19,9 @@
           "allowed": [
               "ValpCVTSaraDownscaled",
               "ValpCVTBayesian",
+              "ValpCommuna",
+              "ValpRegularOriginal",
+              "ValpRegularGrid",
               "LimaCVT1_PD30_TI70_5000",
               "LimaCVT2_PD30_TI70_10000",
               "LimaCVT3_PD30_TI70_50000",

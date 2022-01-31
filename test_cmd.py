@@ -131,33 +131,42 @@ class TestCmdExecution(unittest.TestCase):
         schema = "SARA_v1.0"
         assettype = "res"
         querymode = "intersects"
-        model = "ValpCVTBayesian"
 
-        subprocess.run(
-            [
-                "python3",
-                path_to_assetmaster,
-                str(lonmin),
-                str(lonmax),
-                str(latmin),
-                str(latmax),
-                schema,
-                assettype,
-                querymode,
-                model,
-            ],
-            check=True,
-        )
+        models = [
+            "ValpCVTBayesian",
+            "ValpCVTSaraDownscaled",
+            "ValpCommuna",
+            "ValpRegularGrid",
+            "ValpRegularOriginal",
+        ]
 
-        path_to_output_file = os.path.join(
-            current_dir,
-            "output",
-            "query_output.geojson",
-        )
+        for model in models:
 
-        output = gpd.read_file(path_to_output_file)
+            subprocess.run(
+                [
+                    "python3",
+                    path_to_assetmaster,
+                    str(lonmin),
+                    str(lonmax),
+                    str(latmin),
+                    str(latmax),
+                    schema,
+                    assettype,
+                    querymode,
+                    model,
+                ],
+                check=True,
+            )
 
-        self.assertLess(0, len(output))
+            path_to_output_file = os.path.join(
+                current_dir,
+                "output",
+                "query_output.geojson",
+            )
+
+            output = gpd.read_file(path_to_output_file)
+
+            self.assertLess(0, len(output))
 
     def test_in_ecuador_torres(self):
         """
