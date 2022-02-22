@@ -17,7 +17,8 @@ RUN apt-get update && \
         git \
         cython \
         python3-pip \
-        libspatialindex-dev
+        libspatialindex-dev \
+        libgdal-dev
 
 WORKDIR /usr/share/git/assetmaster
 

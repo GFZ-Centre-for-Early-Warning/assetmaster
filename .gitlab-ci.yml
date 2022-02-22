@@ -28,7 +28,7 @@ cache:
 
 .install_requirements: &install_requirements
   - DEBIAN_FRONTEND=noninteractive apt-get update && apt-get upgrade -y
-  - DEBIAN_FRONTEND=noninteractive apt-get install python3 git python3-pip libspatialindex-dev -y
+  - DEBIAN_FRONTEND=noninteractive apt-get install python3 git cython python3-pip libspatialindex-dev libgdal-dev -y
   - pip3 install --cache-dir=.pip -r requirements.txt
 
 verify_python:
