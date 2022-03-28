@@ -15,6 +15,7 @@
 stages:
   - test
   - build
+  - deploy
 
 variables:
   # needed by click library for the tests
@@ -137,3 +138,12 @@ dockerbuild_tagged:
     - docker tag assetmaster:${CI_COMMIT_TAG} git.gfz-potsdam.de:5000/id2/riesgos/assetmaster:${CI_COMMIT_TAG}
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker push git.gfz-potsdam.de:5000/id2/riesgos/assetmaster:${CI_COMMIT_TAG}
+
+deploy_latest:
+  stage: deploy
+  variables:
+    DEPLOY_LATEST_IMAGES: "true"
+  trigger:
+    project: id2/riesgos/gfz-riesgos-wps-repository
+    branch: master
+    strategy: depend
