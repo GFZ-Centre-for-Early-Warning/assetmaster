@@ -12,6 +12,7 @@
 Tests for the command line execution.
 """
 
+import glob
 import os
 import subprocess
 import unittest
@@ -86,33 +87,45 @@ class TestCmdExecution(unittest.TestCase):
         schema = "SARA_v1.0"
         assettype = "res"
         querymode = "intersects"
-        model = "LimaCVT1_PD30_TI70_5000"
+        exposure_models = [
+            os.path.basename(d)
+            for d in glob.glob(
+                os.path.join(
+                    current_dir,
+                    "schemas",
+                    "SARA_v1.0",
+                    "Lima*",
+                )
+            )
+        ]
+        # We need to have several exposure models
+        self.assertLess(0, len(exposure_models))
+        for model in exposure_models:
+            subprocess.run(
+                [
+                    "python3",
+                    path_to_assetmaster,
+                    str(lonmin),
+                    str(lonmax),
+                    str(latmin),
+                    str(latmax),
+                    schema,
+                    assettype,
+                    querymode,
+                    model,
+                ],
+                check=True,
+            )
 
-        subprocess.run(
-            [
-                "python3",
-                path_to_assetmaster,
-                str(lonmin),
-                str(lonmax),
-                str(latmin),
-                str(latmax),
-                schema,
-                assettype,
-                querymode,
-                model,
-            ],
-            check=True,
-        )
+            path_to_output_file = os.path.join(
+                current_dir,
+                "output",
+                "query_output.geojson",
+            )
 
-        path_to_output_file = os.path.join(
-            current_dir,
-            "output",
-            "query_output.geojson",
-        )
-
-        output = gpd.read_file(path_to_output_file)
-
-        self.assertLess(0, len(output))
+            output = gpd.read_file(path_to_output_file)
+            # And we get data for the queries for each single model
+            self.assertLess(0, len(output))
 
     def test_in_chile(self):
         """
