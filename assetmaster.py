@@ -16,6 +16,7 @@ Command line program to query exposure data from a database/file.
 
 import argparse
 import glob
+import json
 import os
 
 import geopandas as gp
@@ -165,6 +166,7 @@ class Main:
         """
         Export geopandas dataframe as GeoJson file
         """
+
         # file has to be first deleted
         # because driver does not support overwrite !
         try:
@@ -172,15 +174,29 @@ class Main:
         except OSError:
             # print("OS Error removing geojson file")
             pass
+
         # this is the fallback schema for empty dataframes
         # since geojson just contains no elements
         # its fine to not provide any columns
         fallback_schema = {"geometry": "MultiPolygon", "properties": {}}
+
         if dataframe.empty:
             schema = fallback_schema
         else:
             schema = infer_schema(dataframe)
+
         dataframe.to_file(filename, driver="GeoJSON", schema=schema)
+
+        # minify GeoJSON file
+        with open(filename, "rt+") as file:
+            jsonobj = json.load(file)
+
+            file.seek(0)
+            file.truncate()
+
+            json.dump(jsonobj, file, separators=(",", ":"))
+            file.close()
+
         return 0
 
     def _write_outputs(self):
