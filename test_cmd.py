@@ -13,6 +13,7 @@ Tests for the command line execution.
 """
 
 import glob
+import json
 import os
 import subprocess
 import unittest
@@ -225,6 +226,47 @@ class TestCmdExecution(unittest.TestCase):
         output = gpd.read_file(path_to_output_file)
 
         self.assertLess(0, len(output))
+
+        # test the data structure of the output
+        with open(path_to_output_file, "r") as file:
+            data = json.load(file)
+
+        self.assertEqual("FeatureCollection", data.get("type"))
+
+        features = data.get("features")
+
+        self.assertLess(0, len(features))
+
+        first = features[0]
+
+        self.assertEqual("Feature", first.get("type"))
+        self.assertIsNotNone(first.get("properties"))
+        self.assertIsInstance(first.get("properties"), dict)
+        self.assertIsNotNone(first.get("geometry"))
+        self.assertIsInstance(first.get("geometry"), dict)
+
+        properties = first.get("properties")
+
+        self.assertIsNotNone(properties.get("gid"))
+        self.assertIsNotNone(properties.get("name"))
+        self.assertIsNotNone(properties.get("expo"))
+        self.assertIsInstance(properties.get("expo"), dict)
+
+        expo = properties.get("expo")
+
+        self.assertIsNotNone(expo.get("id"))
+        self.assertIsNotNone(expo.get("name"))
+        self.assertIsNotNone(expo.get("Region"))
+        self.assertIsNotNone(expo.get("Taxonomy"))
+        self.assertIsNotNone(expo.get("Buildings"))
+        self.assertIsNotNone(expo.get("Population"))
+        self.assertIsNotNone(expo.get("Repl-cost-USD-bdg"))
+        self.assertIsNotNone(expo.get("Damage"))
+
+        geometry = first.get("geometry")
+
+        self.assertIn(geometry.get("type"), ("MultiPolygon", "Polygon"))
+        self.assertIsNotNone(geometry.get("coordinates"))
 
     def test_in_ecuador_mavrouli(self):
         """

@@ -75,7 +75,7 @@ python_black:
     - group
   before_script:
     - *install_requirements
-    - pip3 install --cache-dir=.pip black==21.4b2
+    - pip3 install --cache-dir=.pip black==22.3.0
   script:
     - black -l 79 --check .
 
