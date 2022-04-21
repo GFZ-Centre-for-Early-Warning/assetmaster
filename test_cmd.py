@@ -43,7 +43,7 @@ class TestCmdExecution(unittest.TestCase):
         schema = "SARA_v1.0"
         assettype = "res"
         querymode = "intersects"
-        model = "ValpCVTSaraDownscaled"
+        model = "ValpCVTBayesian"
 
         subprocess.run(
             [
@@ -148,7 +148,6 @@ class TestCmdExecution(unittest.TestCase):
 
         models = [
             "ValpCVTBayesian",
-            "ValpCVTSaraDownscaled",
             "ValpCommuna",
             "ValpRegularGrid",
             "ValpRegularOriginal",

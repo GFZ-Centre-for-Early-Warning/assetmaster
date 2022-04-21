@@ -17,7 +17,6 @@
           "useAs": "commandLineArgument",
           "type": "string",
           "allowed": [
-              "ValpCVTSaraDownscaled",
               "ValpCVTBayesian",
               "ValpCommuna",
               "ValpRegularOriginal",
