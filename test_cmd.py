@@ -151,6 +151,8 @@ class TestCmdExecution(unittest.TestCase):
             "ValpCommuna",
             "ValpRegularGrid",
             "ValpRegularOriginal",
+            "ValpOBM23Comunas",
+            "ValpOBM23Region",
         ]
 
         for model in models:

@@ -10,7 +10,16 @@
         { "title" : "lonmax",              "useAs": "commandLineArgument", "type": "double", "default": "-71.4"},
         { "title" : "latmin",              "useAs": "commandLineArgument", "type": "double", "default": "-33.2"},
         { "title" : "latmax",              "useAs": "commandLineArgument", "type": "double", "default": "-33.0"},
-        { "title" : "schema",              "useAs": "commandLineArgument", "type": "string", "default": "SARA_v1.0", "allowed": ["SARA_v1.0", "Mavrouli_et_al_2014", "Torres_Corredor_et_al_2017"]},
+        { "title" : "schema",
+          "useAs": "commandLineArgument",
+          "type": "string",
+          "default": "SARA_v1.0",
+          "allowed": [
+              "SARA_v1.0", 
+              "Mavrouli_et_al_2014", 
+              "Torres_Corredor_et_al_2017"
+          ]
+        },
         { "title" : "assettype",           "useAs": "commandLineArgument", "type": "string", "default": "res", "allowed": ["res"]},
         { "title" : "querymode",           "useAs": "commandLineArgument","type": "string", "default": "intersects", "allowed": ["intersects","within"]},
         { "title": "model",
@@ -21,6 +30,8 @@
               "ValpCommuna",
               "ValpRegularOriginal",
               "ValpRegularGrid",
+              "ValpOBM23Comunas",
+              "ValpOBM23Region",
               "LimaCVT1_PD30_TI70_5000",
               "LimaCVT2_PD30_TI70_10000",
               "LimaCVT3_PD30_TI70_50000",
