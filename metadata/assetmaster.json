@@ -2,7 +2,7 @@
     "title": "AssetmasterProcess",
     "imageId": "gfzriesgos/assetmaster:latest",
     "workingDirectory": "/usr/share/git/assetmaster",
-    "commandToExecute": "python3 assetmaster.py",
+    "commandToExecute": "bash wps_assetmaster.sh",
     "exitValueHandler": "logging",
     "stderrHandler": "logging",
     "input": [
@@ -15,8 +15,8 @@
           "type": "string",
           "default": "SARA_v1.0",
           "allowed": [
-              "SARA_v1.0", 
-              "Mavrouli_et_al_2014", 
+              "SARA_v1.0",
+              "Mavrouli_et_al_2014",
               "Torres_Corredor_et_al_2017"
           ]
         },
@@ -44,6 +44,8 @@
         }
      ],
     "output": [
-        { "title": "selectedRowsGeoJson", "readFrom": "file", "path": "output/query_output.geojson", "type": "json"}
+        { "title": "selectedRowsGeoJson", "readFrom": "file", "path": "output/query_output.geojson", "type": "json"},
+        { "title": "shapefile_summary", "readFrom": "file", "path": "output/summary.shp", "type": "shapefile"},
+        { "title": "meta_summary", "readFrom": "file", "path": "output/meta_summary.json", "type": "json"}
     ]
 }
