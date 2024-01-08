@@ -82,7 +82,7 @@ def main():
     custom_cols = CustomColumnGenerator(prefix="c")
 
     for _, row in data_in.iterrows():
-        expo = row.expo
+        expo = pandas.DataFrame(row.expo)
         gid = row.gid
         ids.append(gid)
         geometries.append(row.geometry)
